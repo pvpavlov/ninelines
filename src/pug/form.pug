@@ -1,0 +1,120 @@
+form
+    .row.form.bg_section
+        .columns.small-8.medium-3.large-2
+            .wrap_img
+                img(
+                    src=`${baseDir}images/myavatar.jpg?v=${Date.now()}`
+                    class="avatar"
+                    alt="avatar"
+                )
+
+        .columns.small-8.medium-5.large-6.wrap_form
+            img(
+                src=`${baseDir}images/seal.png?v=${Date.now()}`
+                class="seal"
+                alt="seal"
+            )
+
+            each val, index in {1:"Павел",2:"14.05.1980",3:"Запорожье",4:"тел. +380933099397"}
+                input.columns.small-12(
+                    type="text"
+                    name="agreement"
+                    placeholder=val
+                )
+
+    .line_hr
+
+    .row.form.bg_section
+        h3.skills.columns.small-8 
+            | Навыки
+        fieldset.columns.small-4.medium-4.large-2
+            each val, index in {1:"html5",2:"css3",3:"бэм"}
+                input.checkbox(
+                    id="checkbox" + index
+                    name=val
+                    type="checkbox"
+                    value="0"
+                    checked
+                )
+
+                label.label_checkbox(for="checkbox" + index)=val
+
+        fieldset.columns.small-4.medium-4.large-2
+            each val, index in {4:'sass',5:'less',6:'gulp'}
+                input.checkbox(
+                    id="checkbox" + index
+                    name=val
+                    type="checkbox"
+                    value="0"
+                    checked
+                )
+
+                label.label_checkbox(for="checkbox" + index)=val
+
+        fieldset.columns.small-4.medium-4.large-2
+            input.checkbox(
+                id="checkbox7"
+                name="vanillajs"
+                type="checkbox"
+                value="50"
+                checked
+            )
+
+            label.label_checkbox(for="checkbox7") 
+                | vanillajs
+
+            input.checkbox(
+                id="checkbox8"
+                name="angular"
+                type="checkbox"
+                value="50"
+            )
+
+            label.label_checkbox(for="checkbox8") 
+                | angular
+
+            input.checkbox(
+                id="checkbox9"
+                name="jquery"
+                type="checkbox"
+                value="0"
+                checked
+            )
+
+            label.label_checkbox(for="checkbox9") 
+                | jquery
+
+        fieldset.columns.small-4.medium-4.large-2
+            each val, index in {10:"git",11:"foundation",12:"bootstrap"}
+                input.checkbox(
+                    id="checkbox" + index
+                    name=val
+                    type="checkbox"
+                    checked
+                    value="0"
+                )
+
+                label.label_checkbox(for="checkbox" + index)=val
+
+    .line_hr
+
+    .row.form.bg_section.possession
+        .columns.small-8.medium-8.large-4 
+            div.wrapper
+                div.rang
+                    img(
+                        src=`${baseDir}images/clock.png?v=${Date.now()}`
+                        class="clock"
+                        alt="clock"
+                    )
+                    svg.meter
+                        //- +svg("clock")
+                        polygon.meter-clock(points="128,147 138,90 146,147")
+                        circle.meter-circle(r="9" cx="137" cy="146")
+        .columns.small-8.medium-8.large-4
+            h3.js 
+                | Мой уровень владения#[br]
+                | Java Script
+            div.rang-title
+                .rang-number#show 
+                    | 50 %            
